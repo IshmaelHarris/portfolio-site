@@ -1,18 +1,16 @@
 import React from 'react';
 import { SiReact } from "react-icons/si";
 import { BiNetworkChart, BiTime } from "react-icons/bi";
-import { DiFirebase, DiReact, DiCode, DiApple } from 'react-icons/di';
-import { BsGear } from "react-icons/bs";
 import { FiDatabase } from "react-icons/fi";
 import { AiOutlineMobile, AiOutlineCloud } from "react-icons/ai";
-import { Section, SectionDivider, SectionText, SectionTitle } from '../../styles/GlobalComponents';
+import { Section, SectionDivider, SectionTitle } from '../../styles/GlobalComponents';
 import { List, ListContainer, ListItem, ListParagraph, ListTitle } from './TechStyles';
 
 const Tech = () =>  (
   <Section id="tech">
     <SectionDivider />
     <br />
-    <SectionTitle>Tech Experience</SectionTitle>
+    <SectionTitle>Tech</SectionTitle>
     <List>
 
       {/* TOP */}

@@ -1,12 +1,14 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { Box, Boxes, BoxNum, BoxText } from './AboutStyles';
+import { AccompData } from '../../constants/AccompData'
 
-import { CarouselButton, CarouselButtonDot, CarouselButtons, CarouselContainer, CarouselItem, CarouselItemImg, CarouselItemText, CarouselItemTitle, CarouselMobileScrollNode } from './TimeLineStyles';
+import { CarouselButton, CarouselButtonDot, CarouselButtons, CarouselContainer, CarouselItem, CarouselItemImg, CarouselItemText, CarouselItemTitle, CarouselMobileScrollNode } from './AboutStyles';
 import { Section, SectionDivider, SectionText, SectionTitle } from '../../styles/GlobalComponents';
-import { TimeLineData } from '../../constants/constants';
+import { TimeLineData } from '../../constants/TimeLineData';
 
 const TOTAL_CAROUSEL_COUNT = TimeLineData.length;
 
-const Timeline = () => {
+const About = () => {
   const [activeItem, setActiveItem] = useState(0);
   const carouselRef = useRef();
 
@@ -46,7 +48,7 @@ const Timeline = () => {
     <Section id="about">
       <SectionDivider />
       <br />
-      <SectionTitle>About Me</SectionTitle>
+      <SectionTitle>About</SectionTitle>
       {/* <SectionText>
         My passion for technology came from a fascination of social connections. <br />
         Technology affects every aspect of our lives because it's more than just the objects. <br />
@@ -83,8 +85,18 @@ const Timeline = () => {
           </CarouselButton>
         ))}
       </CarouselButtons>
+      <Boxes>
+      {AccompData.map((card, index) => (
+        <Box key={index}>
+          <BoxNum>{card.number}</BoxNum>
+          <BoxText>{card.text}</BoxText>
+        </Box>
+      ))}
+    </Boxes>
+    
     </Section>
+    
   );
 };
 
-export default Timeline;
+export default About;
