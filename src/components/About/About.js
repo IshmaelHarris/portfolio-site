@@ -1,12 +1,12 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Box, Boxes, BoxNum, BoxText } from './AboutStyles';
-import { AccompData } from '../../constants/AccompData'
+import { accompData } from '../../constants/accompData'
 
 import { CarouselButton, CarouselButtonDot, CarouselButtons, CarouselContainer, CarouselItem, CarouselItemImg, CarouselItemText, CarouselItemTitle, CarouselMobileScrollNode } from './AboutStyles';
 import { Section, SectionDivider, SectionText, SectionTitle } from '../../styles/GlobalComponents';
-import { TimeLineData } from '../../constants/TimeLineData';
+import { timeLineData } from '../../constants/timeLineData';
 
-const TOTAL_CAROUSEL_COUNT = TimeLineData.length;
+const TOTAL_CAROUSEL_COUNT = timeLineData.length;
 
 const About = () => {
   const [activeItem, setActiveItem] = useState(0);
@@ -49,17 +49,18 @@ const About = () => {
       <SectionDivider />
       <br />
       <SectionTitle>About</SectionTitle>
-      {/* <SectionText>
-        My passion for technology came from a fascination of social connections. <br />
-        Technology affects every aspect of our lives because it's more than just the objects. <br />
-        It's a product of looking at the world as an organized system that has repeatable outputs. <br />
-        Unlocking the mystery of how that works has changed lives immensely for the better. <br />
-        I hope to join the symphony of developers in order to be a part of that.      
-      </SectionText> */}
+
+      <SectionText>
+        Technology is a gift. <br />
+        Over the years, it's opened my eyes to many new ideas <br />
+        Everyday I want to be a part of this journey. <br />
+        I love collborating and tech is the best place for that. <br />
+       
+      </SectionText>
       
-      <CarouselContainer ref={carouselRef} onScroll={handleScroll}>
+      {/* <CarouselContainer ref={carouselRef} onScroll={handleScroll}>
         <>
-          {TimeLineData.map((item, index) => (
+          {timeLineData.map((item, index) => (
             <CarouselMobileScrollNode key={index} final={index === TOTAL_CAROUSEL_COUNT - 1}>
               <CarouselItem index={index} 
                 id={`carousel__item-${index}`} 
@@ -71,10 +72,10 @@ const About = () => {
             </CarouselMobileScrollNode>
           ))}
         </>
-      </CarouselContainer>
+      </CarouselContainer> */}
      
       <CarouselButtons>
-        {TimeLineData.map((item, index) => (
+        {timeLineData.map((item, index) => (
           <CarouselButton 
             key={index}
             index={index}
@@ -85,14 +86,16 @@ const About = () => {
           </CarouselButton>
         ))}
       </CarouselButtons>
+      
       <Boxes>
-      {AccompData.map((card, index) => (
+      {accompData.map((card, index) => (
         <Box key={index}>
           <BoxNum>{card.number}</BoxNum>
           <BoxText>{card.text}</BoxText>
         </Box>
       ))}
     </Boxes>
+    
     
     </Section>
     

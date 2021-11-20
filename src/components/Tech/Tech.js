@@ -32,8 +32,9 @@ const Tech = () =>  (
         <ListTitle>Back End</ListTitle>
         <ListParagraph>
           ● Go <br />
-          ● Node <br />
-          ● Spring Boot
+          ● .NET <br />
+          ● Node 
+          
         </ListParagraph>
       </ListContainer>
       </ListItem>

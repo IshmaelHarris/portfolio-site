@@ -2,7 +2,7 @@ import React from 'react';
 
 import { BlogCard, CardInfo, ExternalLinks, GridContainer, HeaderThree, Hr, Tag, TagList, TitleContent, UtilityList, Img, ProjectName } from './ProjectsStyles';
 import { Section, SectionDivider, SectionTitle } from '../../styles/GlobalComponents';
-import { projects } from '../../constants/constants';
+import { projectData } from '../../constants/projectData';
 import { Container } from '../Header/HeaderStyles';
 
 
@@ -11,35 +11,38 @@ const Projects = () => (
     <SectionDivider />
     <br />
     <SectionTitle>Projects</SectionTitle>
-    <Container>
-    {projects.map(({title}) => (
-      <ProjectName text-align="left" >{title}</ProjectName>
-    ))}
+    {/* <Container> */}
+    {/* {projects.map(({title}) => ( */}
+      {/* <ProjectName text-align="left" >{title}</ProjectName> */}
+    {/* ))} */}
     {/* Make ProjectName reveal Project details  */}
-    </Container>
-    
+    {/* </Container>  */}
     <GridContainer>
-      {projects.map(({id, image, title, description, tags, url, code}) => (
+      {projectData.map(({id, image, title, description, tags, url, code}) => (
           <BlogCard key={id}>
-            <Img src={image} />
+          <Img src={image} />
+
             <TitleContent>
               <HeaderThree title>{title}</HeaderThree>
               <Hr />
             </TitleContent>
+          
             <CardInfo>{description}</CardInfo>
+          
             <div>
-              <TitleContent>Stack</TitleContent>
+              {/* <TitleContent>Stack</TitleContent> */}
               <TagList>
                 {tags.map((tag, i) => (
                     <Tag key={i}>{tag}</Tag>
                 ))}
               </TagList>
             </div>
+            
             <UtilityList>
-            <ExternalLinks href={url}>View</ExternalLinks>
+              <ExternalLinks href={url}>View</ExternalLinks>
               <ExternalLinks href={code}>Git</ExternalLinks>
-              
             </UtilityList>
+          
           </BlogCard>
       ))}
     </GridContainer>

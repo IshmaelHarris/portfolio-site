@@ -9,15 +9,9 @@ const Footer = () => {
     <FooterWrapper>
       <LinkList>
         <LinkColumn>
-          <LinkTitle>Call</LinkTitle>
-          <LinkItem href="tel:">510.abc.1234</LinkItem>
-        </LinkColumn>
-
-        <LinkColumn>
           <LinkTitle>Email</LinkTitle>
           <LinkItem href="mailto:ish@ishmaelharris.dev">ish@ishmaelharris.dev</LinkItem>
         </LinkColumn>
-      </LinkList>
       
       <SocialContainer>
       <SocialIcons href="https://github.com/IshmaelHarris">
@@ -27,6 +21,9 @@ const Footer = () => {
         <AiFillLinkedin size = "3rem"/>
       </SocialIcons>
       </SocialContainer>
+      </LinkList>
+
+
     </FooterWrapper>
   );
 };
